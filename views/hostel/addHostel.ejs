@@ -1,0 +1,176 @@
+<% include ../partials/header%>
+    <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 600px; background-image: url(https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=be5b6f36d8e6333027d74db000db5cc9&auto=format&fit=crop&w=1489&q=80); background-size: cover; background-position: center top;">
+      <!-- Mask -->
+      <span class="mask bg-gradient-default opacity-8"></span>
+      <!-- Header container -->
+      <div class="container-fluid d-flex align-items-center">
+        <div class="row">
+          <div class="col-lg-7 col-md-10">
+            <h1 class="display-2 text-white">Hello <%=currentUser.role%></h1>
+            <p class="text-white mt-0 mb-5">Add the details of the hostel in the form below to create a new hostel.</p>
+            <a href="#!" class="btn btn-info">Edit profile</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Page content -->
+    <div class="container-fluid mt--7">
+      <div class="row">
+        <div class="col-xl-12 order-xl-1">
+          <div class="card bg-secondary shadow">
+            <div class="card-header bg-white border-0">
+              <div class="row align-items-center">
+                <div class="col-8">
+                  <h3 class="mb-0">Hostel Details</h3>
+                </div>
+                <!-- <div class="col-4 text-right">
+                  <a href="#!" class="btn btn-sm btn-primary">Settings</a>
+                </div> -->
+              </div>
+            </div>
+            <div class="card-body">
+              <form action="/dashboard/hostels" method="post">
+                <h6 class="heading-small text-muted mb-4">Hostel information</h6>
+                <div class="pl-lg-4">
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-username">Hostel Name</label>
+                        <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="eg. MacDonald Hall" name="name">
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-email">Year of Establishment</label>
+                        <input type="number" id="input-email" class="form-control form-control-alternative" placeholder="eg. 1991" name="year">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-4">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-first-name">No. of Rooms</label>
+                        <input type="number" id="input-first-name" class="form-control form-control-alternative" placeholder="eg. 5" name="room">
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-last-name">Seater</label>
+                        <input type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="eg. 1,2,3 or 4" name="seater">
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-first">Rent</label>
+                        <input type="text" id="input-first" class="form-control form-control-alternative" placeholder="eg. 1000" name="rent">
+                      </div>
+                    </div>
+                  </div>
+                  <h5 class="form-control-label">Gernder of boarders:</h5>
+                              <div class="form-group">
+                                <div class="row">
+                                  <div class="col-lg-1">
+                                      <div class="custom-control custom-radio mb-3">
+                                          <input name="sex" class="custom-control-input" id="student" type="radio" value="male">
+                                          <label class="custom-control-label" for="student">Male</label>
+                                        </div>
+                                  </div>
+                                  <div class="col-lg-1">
+                                      <div class="custom-control custom-radio mb-3">
+                                          <input name="sex" class="custom-control-input" id="warden" type="radio" value="female">
+                                          <label class="custom-control-label" for="warden">Female</label>
+                                      </div>
+                                  </div>
+                                  <div class="col-lg-1">
+                                      <div class="custom-control custom-radio mb-3">
+                                          <input name="sex" class="custom-control-input" id="admin" type="radio" value="both">
+                                          <label class="custom-control-label" for="admin">Both</label>
+                                      </div>
+                                  </div>
+                                </div>
+                                </div>
+                </div>
+                <hr class="my-4" />
+                <!-- Address -->
+                <h6 class="heading-small text-muted mb-4">Contact information</h6>
+                        <div class="pl-lg-4">
+                          <div class="row">
+                            <div class="col-md-12">
+                              <div class="form-group">
+                                <label class="form-control-label" for="input-address">Address</label>
+                                <input id="input-address" class="form-control form-control-alternative" placeholder="Home Address" type="text" name="address">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-lg-4">
+                              <div class="form-group">
+                                <label class="form-control-label" for="input-city">City</label>
+                                <input type="text" id="input-city" class="form-control form-control-alternative" placeholder="City" name="city">
+                              </div>
+                            </div>
+                            <div class="col-lg-4">
+                              <div class="form-group">
+                                <label class="form-control-label" for="input-country">State</label>
+                                <input type="text" id="input-country" class="form-control form-control-alternative" placeholder="State" name="state">
+                              </div>
+                            </div>
+                            <div class="col-lg-4">
+                              <div class="form-group">
+                                <label class="form-control-label" for="input-country">Postal code</label>
+                                <input type="number" id="input-postal-code" class="form-control form-control-alternative" placeholder="Postal code" name="pincode">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <hr class="my-4" />
+                <!-- Description -->
+                <h6 class="heading-small text-muted mb-4">Description</h6>
+                <div class="pl-lg-4">
+                    <h5 class="form-control-label">Institure / College</h5>
+                    <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-group">
+                              <div class="custom-control custom-radio mb-3">
+                                  <input name="college" class="custom-control-input" id="college" type="radio" value="IIEST, Shibpur">
+                                  <label class="custom-control-label" for="college">IIEST, Shibpur</label>
+                                </div>
+                          </div>
+                        </div>
+                      </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label class="form-control-label" for="input-address">Image</label>
+                            <input id="input-address" class="form-control form-control-alternative" placeholder="please provide a link of image due to limited database storage" type="text" name="image">
+                          </div>
+                        </div>
+                      </div>
+                      
+                  <div class="form-group">
+                    <label class="form-control-label">Hostel Description:</label>
+                    <textarea rows="4" class="form-control form-control-alternative" placeholder="A few words about your hostel like a bio or something..." name="desc"></textarea>
+                  </div>
+                </div>
+                <div class="text-center">
+                    <input class="btn btn-primary mt-4" type="submit" value="Create hostel">
+                  <!-- <button type="submit" class="btn btn-primary mt-4">Create account</button> -->
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Footer -->
+      <% include ../partials/footer%>
+    </div>
+  </div>
+  <!-- Argon Scripts -->
+  <!-- Core -->
+  <script src="/vendor/jquery/dist/jquery.min.js"></script>
+  <script src="/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Argon JS -->
+  <script src="/js/argon.js?v=1.0.0"></script>
+</body>
+
+</html>

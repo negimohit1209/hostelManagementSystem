@@ -1,0 +1,177 @@
+<% include ../partials/header%>
+    <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
+      <div class="container-fluid">
+        <div class="header-body">
+            <% if(applications.length === 0){ %>
+              <a href="/dashboard" class="btn btn-outline-success btn-lg" data-toggle="modal" data-target="#modal-back">No Pending application</a>
+            <% }else{ %>
+              <button type="button" class="btn btn-outline-success btn-lg" data-toggle="modal" data-target="#modali">
+                  Start Allotment
+              </button>
+            <% } %>
+            
+        </div>
+        <!-- modal -->
+        <div class="modal fade" id="modali" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Start the allotment process</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <p>The allotment will be done using highly efficient algorithms. Fasten your seat belts</p>
+                </div>
+                <div class="modal-footer">
+                    <form action="/dashboard/application/student" method="post">
+                      <input class="btn btn-primary mt-4" type="submit" value="Confirm">
+                    </form>
+                  <button type="button" class="btn btn-secondary ml-auto" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+            </div>
+            <!-- modal-back -->
+            <div class="modal fade" id="modal-back" tabindex="-1" role="dialog" aria-labelledby="modal-notification" aria-hidden="true">
+                <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
+                    <div class="modal-content bg-gradient-danger">
+            
+                        <div class="modal-header">
+                            <h6 class="modal-title" id="modal-title-notification">Your attention is required</h6>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+            
+                        <div class="modal-body">
+            
+                            <div class="py-3 text-center">
+                                <i class="ni ni-bell-55 ni-3x"></i>
+                                <h4 class="heading mt-4">Sorry!</h4>
+                                <p>It looks like their is no pending application.</p>
+                                
+                            </div>
+            
+                        </div>
+            
+                        <div class="modal-footer">
+                          <a href="/dashboard/application/student/history" class="btn btn-white">History</a>
+                          <a href="/dashboard" class="btn btn-link text-white ml-auto">Back</a> 
+                        </div>
+            
+                    </div>
+                </div>
+            </div>
+      </div>
+    </div>
+    <!-- Page content -->
+    <div class="container-fluid mt--7">
+      <!-- Table -->
+      <div class="row">
+        <div class="col">
+          <div class="card shadow">
+            <div class="card-header border-0">
+              <h3 class="mb-0">Hostels</h3>
+            </div>
+            <div class="table-responsive">
+              <table class="table align-items-center table-flush">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Distamce</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Hostel</th>
+                    <th scope="col">Family income</th>
+                    <th scope="col">Submitted at</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <% applications.forEach((application)=> { %>
+                    <tr>
+                        <th scope="row">
+                          <div class="media align-items-center">
+                           
+                            <div class="media-body">
+                              <span class="mb-0 text-sm"><%=application.firstName%> <%=application.lastName%></span>
+                            </div>
+                          </div>
+                        </th>
+                        <td>
+                          <%=application.distance%> KM
+                        </td>
+                        <td>
+                          <span class="badge badge-dot mr-4">
+                            <i class="bg-warning"></i> <%=application.status%>
+                          </span>
+                        </td>
+                        <td>
+                          <% if(application.hostelName){ %>
+                            <%=application.hostelName%> 
+                          <% }else{ %>
+                            hostel name
+                          <% } %>
+                          
+                        </td>
+                        <td>
+                          &#x20b9 <%=application.income%> 
+                        </td>
+                        <td>
+                          
+                            <%=moment(application.timestamp).format('MMM Do YYYY, h:mm a')%>
+                        </td>
+                        
+                      </tr>
+                      <% }); %>
+                  
+                  
+                 
+                  
+                
+                </tbody>
+              </table>
+            </div>
+            <!-- <div class="card-footer py-4">
+              <nav aria-label="...">
+                <ul class="pagination justify-content-end mb-0">
+                  <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">
+                      <i class="fas fa-angle-left"></i>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                  </li>
+                  <li class="page-item active">
+                    <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">
+                      <i class="fas fa-angle-right"></i>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div> -->
+          </div>
+        </div>
+      </div>
+      <!-- Footer -->
+      <% include ../partials/footer%>
+    </div>
+  </div>
+  <!-- Argon Scripts -->
+  <!-- Core -->
+  <script src="/vendor/jquery/dist/jquery.min.js"></script>
+  <script src="/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Argon JS -->
+  <script src="/js/argon.js?v=1.0.0"></script>
+  <script src="moment.js"></script>
+</body>
+
+</html>

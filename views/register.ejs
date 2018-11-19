@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
+  <meta name="author" content="Creative Tim">
+  <title>Argon Dashboard - Free Dashboard for Bootstrap 4</title>
+  <!-- Favicon -->
+  <link href="/img/brand/favicon.png" rel="icon" type="image/png">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <!-- Icons -->
+  <link href="/vendor/nucleo/css/nucleo.css" rel="stylesheet">
+  <link href="/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <!-- Argon CSS -->
+  <link type="text/css" href="/css/argon.css?v=1.0.0" rel="stylesheet">
+</head>
+
+<body class="bg-default">
+  <div class="main-content">
+    <!-- Navbar -->
+    <nav class="navbar navbar-top navbar-horizontal navbar-expand-md navbar-dark">
+      <div class="container px-4">
+        <!-- <a class="navbar-brand" href="/">
+          <img src="/img/brand/white.png" />
+        </a> -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse-main" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar-collapse-main">
+          <!-- Collapse header -->
+          <div class="navbar-collapse-header d-md-none">
+            <div class="row">
+              <div class="col-6 collapse-brand">
+                <a href="../index.html">
+                  <img src="/img/brand/blue.png">
+                </a>
+              </div>
+              <div class="col-6 collapse-close">
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle sidenav">
+                  <span></span>
+                  <span></span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Navbar items -->
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                  <a class="nav-link nav-link-icon" href="/">
+                    <i class="ni ni-planet"></i>
+                    <span class="nav-link-inner--text">Landing</span>
+                  </a>
+                </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-icon" href="/register">
+                <i class="ni ni-circle-08"></i>
+                <span class="nav-link-inner--text">Register</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-icon" href="/login">
+                <i class="ni ni-key-25"></i>
+                <span class="nav-link-inner--text">Login</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Header -->
+    <div class="header bg-gradient-primary py-7 py-lg-8">
+      <div class="container">
+        <div class="header-body text-center mb-7">
+          <div class="row justify-content-center">
+            <div class="col-lg-5 col-md-6">
+              <h1 class="text-white">Welcome!</h1>
+              <!-- <p class="text-lead text-light">Use these awesome forms to login or create new account in your project for free.</p> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="separator separator-bottom separator-skew zindex-100">
+        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <polygon class="fill-default" points="2560 0 2560 100 0 100"></polygon>
+        </svg>
+      </div>
+    </div>
+    <!-- Page content -->
+    <div class="container mt--8 pb-5">
+      <!-- Table -->
+      <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8">
+          <div class="card bg-secondary shadow border-0">
+            <!-- <div class="card-header bg-transparent pb-5">
+              <div class="text-muted text-center mt-2 mb-4"><small>Sign up with</small></div>
+              <div class="text-center">
+                <a href="#" class="btn btn-neutral btn-icon mr-4">
+                  <span class="btn-inner--icon"><img src="/img/icons/common/github.svg"></span>
+                  <span class="btn-inner--text">Github</span>
+                </a>
+                <a href="#" class="btn btn-neutral btn-icon">
+                  <span class="btn-inner--icon"><img src="/img/icons/common/google.svg"></span>
+                  <span class="btn-inner--text">Google</span>
+                </a>
+              </div>
+            </div> -->
+            <div class="card-body px-lg-5 py-lg-5">
+              <!-- <div class="text-center text-muted mb-4">
+                <small>Or sign up with credentials</small>
+              </div> -->
+              
+              <form action="/register" method="post">
+                            <h5 class="form-control-label">Register as a:</h5>
+                              <div class="form-group">
+                                <div class="row">
+                                  <div class="col-lg-4">
+                                      <div class="custom-control custom-radio mb-3">
+                                          <input name="role" class="custom-control-input" id="student" type="radio" value="student">
+                                          <label class="custom-control-label" for="student">Student</label>
+                                        </div>
+                                  </div>
+                                  <div class="col-lg-4">
+                                      <div class="custom-control custom-radio mb-3">
+                                          <input name="role" class="custom-control-input" id="warden" type="radio" value="warden">
+                                          <label class="custom-control-label" for="warden">Warden</label>
+                                      </div>
+                                  </div>
+                                  <div class="col-lg-4">
+                                      <div class="custom-control custom-radio mb-3">
+                                          <input name="role" class="custom-control-input" id="admin" type="radio" value="admin">
+                                          <label class="custom-control-label" for="admin">Admin</label>
+                                      </div>
+                                  </div>
+                                </div>
+                                </div>
+                                <hr class="my-4" />    
+                        <h6 class="heading-small text-muted mb-4">User information</h6>
+                        <div class="pl-lg-4">
+                          <div class="row">
+                            <div class="col-lg-6">
+                              <div class="form-group">
+                                <label class="form-control-label" for="input-username">Enrollment / Employee ID</label>
+                                <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="eg. 1234" name="username">
+                              </div>
+                            </div>
+                            <div class="col-lg-6">
+                              <div class="form-group">
+                                <label class="form-control-label" for="password">Password</label>
+                                <input type="password" id="password" class="form-control form-control-alternative" name="password">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-lg-12">
+                                  <div class="form-group">
+                                    <label class="form-control-label" for="input-email">Email address</label>
+                                    <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="email@email.com" name="email">
+                                  </div>
+                                </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-lg-6">
+                              <div class="form-group">
+                                <label class="form-control-label" for="input-first-name">First name</label>
+                                <input type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="First name" name="firstName">
+                              </div>
+                            </div>
+                            <div class="col-lg-6">
+                              <div class="form-group">
+                                <label class="form-control-label" for="input-last-name">Last name</label>
+                                <input type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="Last name" name="lastName">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-lg-6">
+                              <div class="form-group">
+                                <label class="form-control-label" for="input-first-name">Date of birth</label>
+                                <input type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="DD/MM/YYYY" name="dob">
+                              </div>
+                            </div>
+                            <div class="col-lg-6">
+                              <h5 class="form-control-label">Gender</h5>
+                              <div class="form-group">
+                                <div class="row">
+                                  <div class="col-lg-6">
+                                      <div class="custom-control custom-radio mb-3">
+                                          <input name="sex" class="custom-control-input" id="customRadio1" type="radio" value="male">
+                                          <label class="custom-control-label" for="customRadio1">male</label>
+                                        </div>
+                                  </div>
+                                  <div class="col-lg-6">
+                                      <div class="custom-control custom-radio mb-3">
+                                          <input name="sex" class="custom-control-input" id="customRadio2" type="radio" value="female">
+                                          <label class="custom-control-label" for="customRadio2">female</label>
+                                      </div>
+                                  </div>
+                                </div>
+                                  
+                                    
+                              </div>
+                            </div>
+                          </div>
+                          
+                        </div>
+                        <hr class="my-4" />
+                        <!-- Address -->
+                        <h6 class="heading-small text-muted mb-4">Contact information</h6>
+                        <div class="pl-lg-4">
+                          <div class="row">
+                            <div class="col-md-12">
+                              <div class="form-group">
+                                <label class="form-control-label" for="input-address">Address</label>
+                                <input id="input-address" class="form-control form-control-alternative" placeholder="Home Address" type="text" name="address">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-lg-4">
+                              <div class="form-group">
+                                <label class="form-control-label" for="input-city">City</label>
+                                <input type="text" id="input-city" class="form-control form-control-alternative" placeholder="City" name="city">
+                              </div>
+                            </div>
+                            <div class="col-lg-4">
+                              <div class="form-group">
+                                <label class="form-control-label" for="input-country">State</label>
+                                <input type="text" id="input-country" class="form-control form-control-alternative" placeholder="State" name="state">
+                              </div>
+                            </div>
+                            <div class="col-lg-4">
+                              <div class="form-group">
+                                <label class="form-control-label" for="input-country">Postal code</label>
+                                <input type="number" id="input-postal-code" class="form-control form-control-alternative" placeholder="Postal code" name="pincode">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-lg-3">
+                                  <div class="form-group">
+                                    <label class="form-control-label" for="input-country">Area code</label>
+                                    <input type="text" id="input-postal-code" class="form-control form-control-alternative" placeholder="Area code" name="areacode" value="+91">
+                                  </div>
+                              </div>
+                              <div class="col-md-9">
+                                <div class="form-group">
+                                  <label class="form-control-label" for="input-address">Phone number</label>
+                                  <input id="input-address" class="form-control form-control-alternative" placeholder="phoneno" type="number" name="phoneno">
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                        <!-- Profile Information -->
+                        <hr class="my-4" />
+                        <h6 class="heading-small text-muted mb-4">Profile information (not necessary)</h6>
+                        <div class="pl-lg-4">
+                            <div class="row">
+                              <div class="col-md-12">
+                                <div class="form-group">
+                                  <label class="form-control-label" for="inss">Display Picture</label>
+                                  <input id="inss" class="form-control form-control-alternative" placeholder="Please provide a link" type="text" name="avatar">
+                                </div>
+                              </div>
+                              <div class="col-md-12">
+                                  <div class="form-group">
+                                    <label class="form-control-label" for="inpus">Cover Picture</label>
+                                    <input id="inpus" class="form-control form-control-alternative" placeholder="Please provide a link" type="text" name="cover">
+                                  </div>
+                                </div>
+                            </div>
+                            
+                            
+                          </div>
+                        <!-- Educational information -->
+                        <hr class="my-4" />
+                        <h6 class="heading-small text-muted mb-4">Educational information (Only for Students)</h6>
+                        <div class="pl-lg-4">
+                          <div class="row">
+                              <h5 class="form-control-label">Institute / University</h5>
+                            <div class="col-md-12">
+                                
+                                <div class="form-group">
+                                  <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="custom-control custom-radio mb-3">
+                                            <input name="college" class="custom-control-input" id="college" type="radio" value="IIEST, Shibpur">
+                                            <label class="custom-control-label" for="college">IIEST, Shibpur</label>
+                                          </div>
+                                    </div>
+                                    <!-- <div class="col-lg-6">
+                                        <div class="custom-control custom-radio mb-3">
+                                            <input name="sex" class="custom-control-input" id="customRadio2" type="radio" value="female">
+                                            <label class="custom-control-label" for="customRadio2">female</label>
+                                        </div>
+                                    </div> -->
+                                  </div>
+                                    
+                                      
+                                </div>
+                              <!-- <div class="form-group">
+                                <label class="form-control-label" for="input-address">Institute / University</label>
+                                <input id="input-address" class="form-control form-control-alternative" placeholder="Institute" type="text" value="IIEST, Shibpur" name="college">
+                              </div> -->
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-lg-4">
+                              <div class="form-group">
+                                <label class="form-control-label" for="input-city">Semester</label>
+                                <input type="text" id="input-city" class="form-control form-control-alternative" placeholder="eg.1,2" name="semester">
+                              </div>
+                            </div>
+                            <div class="col-lg-8">
+                              <div class="form-group">
+                                <label class="form-control-label" for="input-country">Department</label>
+                                <input type="text" id="input-country" class="form-control form-control-alternative" placeholder="eg. Information Technology" name="department">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-lg-4">
+                                <div class="form-group">
+                                  <label class="form-control-label" for="distance">Distance from College(KMs)</label>
+                                  <input type="number" id="distance" class="form-control form-control-alternative" placeholder="eg.1500" name="distance">
+                                </div>
+                              </div>
+                              <div class="col-lg-8">
+                                <div class="form-group">
+                                  <label class="form-control-label" for="income">Family income(&#x20b9)</label>
+                                  <input type="number" id="income" class="form-control form-control-alternative" placeholder="eg. 250000" name="income">
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                        <hr class="my-4" />
+                        <!-- Description -->
+                        <!-- <h6 class="heading-small text-muted mb-4">About me</h6>
+                        <div class="pl-lg-4">
+                          <div class="form-group">
+                            <label>About Me</label>
+                            <textarea rows="4" class="form-control form-control-alternative" placeholder="A few words about you ...">A beautiful Dashboard for Bootstrap 4. It is Free and Open Source.</textarea>
+                          </div>
+                        </div> -->
+                <div class="text-center">
+                    <input class="btn btn-primary mt-4" type="submit" value="Create account">
+                  <!-- <button type="submit" class="btn btn-primary mt-4">Create account</button> -->
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <!-- <div class="col-6">
+              <a href="#" class="text-light"><small>Forgot password?</small></a>
+            </div> -->
+            <div class="col-12 text-right">
+              <a href="/login" class="text-light"><small>Already registered</small></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer -->
+  <footer class="py-5">
+      <div class="container">
+        <div class="row align-items-center justify-content-xl-between">
+          <div class="col-xl-6">
+            <div class="copyright text-center text-xl-left text-muted">
+              © 2018 <a href="" class="font-weight-bold ml-1" target="_blank">MSN Production</a>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </footer>
+  <!-- Argon Scripts -->
+  <!-- Core -->
+  <script src="/vendor/jquery/dist/jquery.min.js"></script>
+  <script src="/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Argon JS -->
+  <script src="/js/argon.js?v=1.0.0"></script>
+</body>
+
+</html>

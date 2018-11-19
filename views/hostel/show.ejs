@@ -1,0 +1,323 @@
+<% include ../partials/header%>
+    <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 600px; background-image: url(<%=hostel.image%>); background-size: cover; background-position: center top;">
+      <!-- Mask -->
+      <span class="mask bg-gradient-default opacity-2"></span>
+      <!-- Header container -->
+      <div class="container-fluid d-flex align-items-center">
+        <div class="row">
+          <div>
+            <h1 class="display-1 text-white"><%=hostel.name%></h1>
+            <p class="text-white mt-0 mb-5">Hostel was Established in <%=hostel.year%>.</p>
+            <% if(currentUser.role === 'admin' && hostel.admin.id.equals(currentUser._id)) { %>
+                <a href="/dashboard/hostels/<%=hostel._id%>/boarders" class="btn btn-info">Boarders List</a>
+            <% } %>
+
+            <% if(currentUser.role === 'student' && typeof(currentUser.hostel.id) === "undefined") { %>
+                <% if(currentUser.distance > 90 && currentUser.income < 250000 ){ %>
+                  <% if(hostel.sex === currentUser.sex || hostel.sex === "both" ){%>
+                    <% if(currentUser.applied.length < 1){ %>
+                      
+                       
+                        
+                      
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                            Apply
+                          </button>
+                      
+                      
+                    <%}else{%>
+                      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-notification-full">
+                          Apply
+                        </button>
+                      <%}%>
+                   <%}else{%>
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-notification">
+                        Apply
+                      </button>
+                    <% } %>
+                <% }else{ %>
+                  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-notification-notAllowed">
+                    Apply
+                  </button>
+                <% } %>
+              <% } %>
+              
+              <% if(currentUser.role === 'warden' && typeof(hostel.warden.id) === "undefined") { %>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#warden">
+                    Apply
+                  </button>
+            <% } %>
+            
+              <!-- you can't apply -->
+              <div class="modal fade" id="modal-notification-notAllowed" tabindex="-1" role="dialog" aria-labelledby="modal-notification" aria-hidden="true">
+                <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
+                    <div class="modal-content bg-gradient-danger">
+            
+                        <div class="modal-header">
+                            <h6 class="modal-title" id="modal-title-notification">Your attention is required</h6>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+            
+                        <div class="modal-body">
+            
+                            <div class="py-3 text-center">
+                                <i class="ni ni-bell-55 ni-3x"></i>
+                                <h4 class="heading mt-4">Not Eligible</h4>
+                                <p>1. The family income is more than 250000 or,</p>
+                                <p>2. The distance b/w hostel and your home is less than 90 kms</p> 
+                            </div>
+            
+                        </div>
+            
+                        <div class="modal-footer">
+                          <!-- <a href="/dashboard/hostels" class="btn btn-white">Ok, Got it</a> -->
+                            <button type="button" class="btn btn-link text-white ml-auto" data-dismiss="modal">Close</button>
+                        </div>
+            
+                    </div>
+                </div>
+            </div>
+            <!-- applied already for the hostel -->
+            <div class="modal fade" id="modal-notification-same" tabindex="-1" role="dialog" aria-labelledby="modal-notification" aria-hidden="true">
+              <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
+                  <div class="modal-content bg-gradient-danger">
+          
+                      <div class="modal-header">
+                          <h6 class="modal-title" id="modal-title-notification">Your attention is required</h6>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">×</span>
+                          </button>
+                      </div>
+          
+                      <div class="modal-body">
+          
+                          <div class="py-3 text-center">
+                              <i class="ni ni-bell-55 ni-3x"></i>
+                              <h4 class="heading mt-4">Not Eligible</h4>
+                              <p>Already applied for <%=hostel.name%></p>
+                          </div>
+          
+                      </div>
+          
+                      <div class="modal-footer">
+                        <a href="/dashboard/hostels" class="btn btn-white">Ok, Got it</a>
+                          <button type="button" class="btn btn-link text-white ml-auto" data-dismiss="modal">Close</button>
+                      </div>
+          
+                  </div>
+              </div>
+          </div>
+
+            <!-- modal for male and female check -->
+            <div class="modal fade" id="modal-notification" tabindex="-1" role="dialog" aria-labelledby="modal-notification" aria-hidden="true">
+            <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
+                <div class="modal-content bg-gradient-danger">
+        
+                    <div class="modal-header">
+                        <h6 class="modal-title" id="modal-title-notification">Your attention is required</h6>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+        
+                    <div class="modal-body">
+        
+                        <div class="py-3 text-center">
+                            <i class="ni ni-bell-55 ni-3x"></i>
+                            <h4 class="heading mt-4">Not Eligible</h4>
+                            <p>This is a <%= hostel.sex%> only hostel and you are a <%= currentUser.sex %></p>
+                        </div>
+        
+                    </div>
+        
+                    <div class="modal-footer">
+                      <a href="/dashboard/hostels" class="btn btn-white">Ok, Got it</a>
+                        <button type="button" class="btn btn-link text-white ml-auto" data-dismiss="modal">Close</button>
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+          
+        <div class="modal fade" id="modal-notification-full" tabindex="-1" role="dialog" aria-labelledby="modal-notification" aria-hidden="true">
+            <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
+                <div class="modal-content bg-gradient-danger">
+        
+                    <div class="modal-header">
+                        <h6 class="modal-title" id="modal-title-notification">Your attention is required</h6>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+        
+                    <div class="modal-body">
+        
+                        <div class="py-3 text-center">
+                            <i class="ni ni-bell-55 ni-3x"></i>
+                            <h4 class="heading mt-4">Not Eligible</h4>
+                            <p>Only apply for 1 hostel. sorry</p>
+                        </div>
+        
+                    </div>
+        
+                    <div class="modal-footer">
+                      <a href="/dashboard/hostels" class="btn btn-white">Ok, Got it</a>
+                        <button type="button" class="btn btn-link text-white ml-auto" data-dismiss="modal">Close</button>
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+
+
+        
+        <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Apply for this hostel</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <p>Are you sure you want to apply for <%=hostel.name%>. You can only apply for 1 hostels.</p>
+    </div>
+    <div class="modal-footer">
+      <form action="/dashboard/hostels/<%=hostel._id%>/apply/<%=currentUser.role%>/<%=currentUser._id%>" method="post">
+        <input class="btn btn-primary mt-4" type="submit" value="Confirm">
+      </form>
+      <button type="button" class="btn btn-secondary ml-auto" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- modal for warden -->
+<div class="modal fade" id="warden" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Apply for this hostel</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <p>Are you sure you want to apply for <%=hostel.name%> , for the position of warden</p>
+        </div>
+        <div class="modal-footer">
+          <form action="/dashboard/hostels/<%=hostel._id%>/apply/<%=currentUser.role%>/<%=currentUser._id%>" method="post">
+            <input class="btn btn-primary mt-4" type="submit" value="Confirm">
+          </form>
+          <button type="button" class="btn btn-secondary ml-auto" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+    </div>
+          </div>
+        </div>
+        <div class="row">
+          <!-- Button trigger modal -->
+
+  
+  
+        </div>
+      </div>
+    </div>
+    <!-- Page content -->
+    <div class="container-fluid mt--7">
+      <div class="row">
+        <div class="col-xl-12 order-xl-2 mb-5 mb-xl-0">
+          <div class="card card-profile shadow">
+            <div class="row justify-content-center">
+              <div class="col-lg-3 order-lg-2">
+                <div class="card-profile-image">
+                  <!-- <a href="#">
+                    <img src="/img/theme/team-4-800x800.jpg" class="rounded-circle">
+                  </a> -->
+                </div>
+              </div>
+            </div>
+            <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
+              <div class="d-flex justify-content-between">
+                <!-- <a href="#" class="btn btn-sm btn-info mr-4">Connect</a> -->
+                  
+                  
+                <%if(typeof(hostel.warden.id) === "undefined"){ %>
+                  <% if(currentUser.role === 'admin' && hostel.admin.id.equals(currentUser._id)) { %>
+                    <a href="#" class="btn btn-sm btn-default float-right">Add Warden</a>
+                  <% } %> 
+                <%} else {%>
+                  <a href="/dashboard/profile/<%=hostel.warden.id%>" class="btn btn-sm btn-default float-right">Warden</a>
+                <%} %>
+                <%if(currentUser.role == "student" || currentUser.role == "warden"){%>
+                  <a href="/dashboard/profile/<%=hostel.admin.id%>" class="btn btn-sm btn-default float-right">Admin</a>
+                <%}%>
+              </div>
+            </div>
+            <div class="card-body pt-0 pt-md-4">
+              
+              <div class="row">
+                <div class="col">
+                  <div class="card-profile-stats d-flex justify-content-center mt-md-5">
+                    <div>
+                      <span class="heading"><%=hostel.room%></span>
+                      <span class="description">Rooms</span>
+                    </div>
+                    <div>
+                      <span class="heading"><%=hostel.seater%></span>
+                      <span class="description">Seater</span>
+                    </div>
+                    <div>
+                      <span class="heading"><%=hostel.rent%>&#x20b9</span>
+                      <span class="description">Rent(/month)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="text-center">
+                <h3>
+                  <%=hostel.address%><span class="font-weight-light"></span>
+                </h3>
+                <div class="h5 font-weight-300">
+                  <i class="ni location_pin mr-2"></i><%=hostel.city%>, <%=hostel.state%> , PIN:<%=hostel.pincode%>
+                </div>
+                <div class="h5 mt-4">
+                  <i class="ni business_briefcase-24 mr-2"></i>Admin - <%=hostel.admin.username%>
+                </div>
+                <%if(typeof(hostel.warden.id) !== "undefined"){ %>
+                    <div class="h5 mt-4">
+                        <i class="ni business_briefcase-24 mr-2"></i>Warden - <%=hostel.warden.username%>
+                    </div>
+                <% } %>
+                <div>
+                        <% var capacity = hostel.room * hostel.seater %>
+                        <% var totalfilled = capacity - hostel.students.length %>
+                  <i class="ni education_hat mr-2"></i><%=totalfilled%> seats are available
+                </div>
+                <hr class="my-4" />
+                <p><%= hostel.desc %></p>
+                <!-- <a href="#">Show more</a> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      <!-- Footer -->
+      <% include ../partials/footer%>
+    </div>
+  </div>
+  <!-- Argon Scripts -->
+  <!-- Core -->
+  <script src="/vendor/jquery/dist/jquery.min.js"></script>
+  <script src="/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Argon JS -->
+  <script src="/js/argon.js?v=1.0.0"></script>
+</body>
+
+</html>
