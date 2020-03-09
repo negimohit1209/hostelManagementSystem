@@ -1,12 +1,12 @@
 <% include ../partials/header%>
-    <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
-      <div class="container-fluid">
-        <div class="header-body">
-          
-            
-        </div>
-        <!-- modal -->
-        <!-- <div class="modal fade" id="modali" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
+  <div class="container-fluid">
+    <div class="header-body">
+
+
+    </div>
+    <!-- modal -->
+    <!-- <div class="modal fade" id="modali" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -27,85 +27,85 @@
               </div>
             </div>
             </div> -->
-      </div>
-    </div>
-    <!-- Page content -->
-    <div class="container-fluid mt--7">
-      <!-- Table -->
-      <div class="row">
-        <div class="col">
-          <div class="card shadow">
-            <div class="card-header border-0">
-              <h3 class="mb-0">Bill Details</h3>
-            </div>
-            <div class="table-responsive">
-              <table class="table align-items-center table-flush">
-                <thead class="thead-light">
-                  <tr>
-                    <th scope="col">Name of Bill</th>
-                    <!-- <th scope="col">Distamce</th> -->
-                    <th scope="col">Amount</th>
-                    <th scope="col">Status</th>
-                    
-                    <!-- <th scope="col">Family income</th> -->
-                    <th scope="col">Due date</th>
-                    <th scope="col">Paid on</th>
-                    <!-- <th scope="col"></th> -->
-                  </tr>
-                </thead>
-                <tbody>
-                    <% bills.forEach((bill)=> { %>
-                    <tr>
-                        <th scope="row">
-                          <div class="media align-items-center">
-                                <a href="#" class="avatar rounded-circle mr-3" data-toggle="tooltip" >
-                                            
-                                        <img alt="Image placeholder" src="<%=bill.avatar%>">
-                                            
-                                          
-                                      </a>
-                            <div class="media-body">
-                              <span class="mb-0 text-sm"><%=bill.name%></span>
-                            </div>
-                          </div>
-                        </th>
-                        <td>
-                                <%= bill.amount %>
-                        </td>
-                        <td>
-                          <span class="badge badge-dot mr-4">
-                              <% if(bill.paid === 0){ %>
-                                <i class="bg-warning"></i> Not Paid
-                              <% }else{ %>
-                                <i class="bg-success"></i> Paid
-                              <% } %>
-                            
-                          </span>
-                        </td>
-                        
-                        <td>
-                                <%=bill.duedate%>
-                        </td>
-                        <td>    
-                                <% if(bill.paid === 0){%>
-                                    -
-                                <%} else {%>
-                                    <%=moment(bill.paidtime).format('DD/MM/YYYY, h:mm a')%>
-                                    <% } %>
-                          
-                        </td>
-                        
-                      </tr>
-                      <% }); %>
-                  
-                  
-                 
-                  
-                
-                </tbody>
-              </table>
-            </div>
-            <!-- <div class="card-footer py-4">
+  </div>
+</div>
+<!-- Page content -->
+<div class="container-fluid mt--7">
+  <!-- Table -->
+  <div class="row">
+    <div class="col">
+      <div class="card shadow">
+        <div class="card-header border-0">
+          <h3 class="mb-0">Bill Details</h3>
+        </div>
+        <div class="table-responsive">
+          <table class="table align-items-center table-flush">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Name of Bill</th>
+                <!-- <th scope="col">Distamce</th> -->
+                <th scope="col">Amount</th>
+                <th scope="col">Status</th>
+
+                <!-- <th scope="col">Family income</th> -->
+                <th scope="col">Due date</th>
+                <th scope="col">Paid on</th>
+                <!-- <th scope="col"></th> -->
+              </tr>
+            </thead>
+            <tbody>
+              <% bills.forEach((bill)=> { %>
+              <tr>
+                <th scope="row">
+                  <div class="media align-items-center">
+                    <a href="#" class="avatar rounded-circle mr-3" data-toggle="tooltip">
+
+                      <img alt="Image placeholder" src="<%=bill.avatar%>">
+
+
+                    </a>
+                    <div class="media-body">
+                      <span class="mb-0 text-sm"><%=bill.name%></span>
+                    </div>
+                  </div>
+                </th>
+                <td>
+                  <%= bill.amount %>
+                </td>
+                <td>
+                  <span class="badge badge-dot mr-4">
+                    <% if(bill.paid === 0){ %>
+                    <i class="bg-warning"></i> Not Paid
+                    <% }else{ %>
+                    <i class="bg-success"></i> Paid
+                    <% } %>
+
+                  </span>
+                </td>
+
+                <td>
+                  <%=bill.duedate%>
+                </td>
+                <td>
+                  <% if(bill.paid === 0){%>
+                  -
+                  <%} else {%>
+                  <%=moment(bill.paidtime).format('DD/MM/YYYY, h:mm a')%>
+                  <% } %>
+
+                </td>
+
+              </tr>
+              <% }); %>
+
+
+
+
+
+            </tbody>
+          </table>
+        </div>
+        <!-- <div class="card-footer py-4">
               <nav aria-label="...">
                 <ul class="pagination justify-content-end mb-0">
                   <li class="page-item disabled">
@@ -130,20 +130,20 @@
                 </ul>
               </nav>
             </div> -->
-          </div>
-        </div>
       </div>
-      <!-- Footer -->
-      <% include ../partials/footer%>
     </div>
   </div>
-  <!-- Argon Scripts -->
-  <!-- Core -->
-  <script src="/vendor/jquery/dist/jquery.min.js"></script>
-  <script src="/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Argon JS -->
-  <script src="/js/argon.js?v=1.0.0"></script>
-  <script src="moment.js"></script>
+  <!-- Footer -->
+  <% include ../partials/footer%>
+</div>
+</div>
+<!-- Argon Scripts -->
+<!-- Core -->
+<script src="/vendor/jquery/dist/jquery.min.js"></script>
+<script src="/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Argon JS -->
+<script src="/js/argon.js?v=1.0.0"></script>
+<script src="moment.js"></script>
 </body>
 
 </html>

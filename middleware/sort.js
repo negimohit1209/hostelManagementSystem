@@ -1,8 +1,6 @@
-
-
 function compare(a, b) {
-  const genreA = a.priority
-  const genreB = b.priority
+  const genreA = a.priority;
+  const genreB = b.priority;
   let comparison = 0;
   if (genreA > genreB) {
     comparison = 1;
@@ -13,5 +11,3 @@ function compare(a, b) {
 }
 
 module.exports = compare;
-
-

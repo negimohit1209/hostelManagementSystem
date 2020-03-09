@@ -26,7 +26,8 @@
         <!-- <a class="navbar-brand" href="/">
           <img src="/img/brand/white.png" />
         </a> -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse-main" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse-main"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbar-collapse-main">
@@ -39,7 +40,8 @@
                 </a>
               </div>
               <div class="col-6 collapse-close">
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle sidenav">
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse-main"
+                  aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle sidenav">
                   <span></span>
                   <span></span>
                 </button>
@@ -48,12 +50,12 @@
           </div>
           <!-- Navbar items -->
           <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                  <a class="nav-link nav-link-icon" href="/">
-                    <i class="ni ni-planet"></i>
-                    <span class="nav-link-inner--text">Landing</span>
-                  </a>
-                </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-icon" href="/">
+                <i class="ni ni-planet"></i>
+                <span class="nav-link-inner--text">Landing</span>
+              </a>
+            </li>
             <li class="nav-item">
               <a class="nav-link nav-link-icon" href="/register">
                 <i class="ni ni-circle-08"></i>
@@ -83,7 +85,8 @@
         </div>
       </div>
       <div class="separator separator-bottom separator-skew zindex-100">
-        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1"
+          xmlns="http://www.w3.org/2000/svg">
           <polygon class="fill-default" points="2560 0 2560 100 0 100"></polygon>
         </svg>
       </div>
@@ -111,233 +114,254 @@
               <!-- <div class="text-center text-muted mb-4">
                 <small>Or sign up with credentials</small>
               </div> -->
-              
+
               <form action="/register" method="post">
-                            <h5 class="form-control-label">Register as a:</h5>
-                              <div class="form-group">
-                                <div class="row">
-                                  <div class="col-lg-4">
-                                      <div class="custom-control custom-radio mb-3">
-                                          <input name="role" class="custom-control-input" id="student" type="radio" value="student">
-                                          <label class="custom-control-label" for="student">Student</label>
-                                        </div>
-                                  </div>
-                                  <div class="col-lg-4">
-                                      <div class="custom-control custom-radio mb-3">
-                                          <input name="role" class="custom-control-input" id="warden" type="radio" value="warden">
-                                          <label class="custom-control-label" for="warden">Warden</label>
-                                      </div>
-                                  </div>
-                                  <div class="col-lg-4">
-                                      <div class="custom-control custom-radio mb-3">
-                                          <input name="role" class="custom-control-input" id="admin" type="radio" value="admin">
-                                          <label class="custom-control-label" for="admin">Admin</label>
-                                      </div>
-                                  </div>
-                                </div>
-                                </div>
-                                <hr class="my-4" />    
-                        <h6 class="heading-small text-muted mb-4">User information</h6>
-                        <div class="pl-lg-4">
-                          <div class="row">
-                            <div class="col-lg-6">
-                              <div class="form-group">
-                                <label class="form-control-label" for="input-username">Enrollment / Employee ID</label>
-                                <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="eg. 1234" name="username">
-                              </div>
-                            </div>
-                            <div class="col-lg-6">
-                              <div class="form-group">
-                                <label class="form-control-label" for="password">Password</label>
-                                <input type="password" id="password" class="form-control form-control-alternative" name="password">
-                              </div>
-                            </div>
-                          </div>
-                          <div class="row">
-                              <div class="col-lg-12">
-                                  <div class="form-group">
-                                    <label class="form-control-label" for="input-email">Email address</label>
-                                    <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="email@email.com" name="email">
-                                  </div>
-                                </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-lg-6">
-                              <div class="form-group">
-                                <label class="form-control-label" for="input-first-name">First name</label>
-                                <input type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="First name" name="firstName">
-                              </div>
-                            </div>
-                            <div class="col-lg-6">
-                              <div class="form-group">
-                                <label class="form-control-label" for="input-last-name">Last name</label>
-                                <input type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="Last name" name="lastName">
-                              </div>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-lg-6">
-                              <div class="form-group">
-                                <label class="form-control-label" for="input-first-name">Date of birth</label>
-                                <input type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="DD/MM/YYYY" name="dob">
-                              </div>
-                            </div>
-                            <div class="col-lg-6">
-                              <h5 class="form-control-label">Gender</h5>
-                              <div class="form-group">
-                                <div class="row">
-                                  <div class="col-lg-6">
-                                      <div class="custom-control custom-radio mb-3">
-                                          <input name="sex" class="custom-control-input" id="customRadio1" type="radio" value="male">
-                                          <label class="custom-control-label" for="customRadio1">male</label>
-                                        </div>
-                                  </div>
-                                  <div class="col-lg-6">
-                                      <div class="custom-control custom-radio mb-3">
-                                          <input name="sex" class="custom-control-input" id="customRadio2" type="radio" value="female">
-                                          <label class="custom-control-label" for="customRadio2">female</label>
-                                      </div>
-                                  </div>
-                                </div>
-                                  
-                                    
-                              </div>
+                <h5 class="form-control-label">Register as a:</h5>
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-lg-4">
+                      <div class="custom-control custom-radio mb-3">
+                        <input name="role" class="custom-control-input" id="student" type="radio" value="student">
+                        <label class="custom-control-label" for="student">Student</label>
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="custom-control custom-radio mb-3">
+                        <input name="role" class="custom-control-input" id="warden" type="radio" value="warden">
+                        <label class="custom-control-label" for="warden">Warden</label>
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="custom-control custom-radio mb-3">
+                        <input name="role" class="custom-control-input" id="admin" type="radio" value="admin">
+                        <label class="custom-control-label" for="admin">Admin</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr class="my-4" />
+                <h6 class="heading-small text-muted mb-4">User information</h6>
+                <div class="pl-lg-4">
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-username">Enrollment / Employee ID</label>
+                        <input type="text" id="input-username" class="form-control form-control-alternative"
+                          placeholder="eg. 1234" name="username">
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label" for="password">Password</label>
+                        <input type="password" id="password" class="form-control form-control-alternative"
+                          name="password">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-email">Email address</label>
+                        <input type="email" id="input-email" class="form-control form-control-alternative"
+                          placeholder="email@email.com" name="email">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-first-name">First name</label>
+                        <input type="text" id="input-first-name" class="form-control form-control-alternative"
+                          placeholder="First name" name="firstName">
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-last-name">Last name</label>
+                        <input type="text" id="input-last-name" class="form-control form-control-alternative"
+                          placeholder="Last name" name="lastName">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-first-name">Date of birth</label>
+                        <input type="text" id="input-first-name" class="form-control form-control-alternative"
+                          placeholder="DD/MM/YYYY" name="dob">
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <h5 class="form-control-label">Gender</h5>
+                      <div class="form-group">
+                        <div class="row">
+                          <div class="col-lg-6">
+                            <div class="custom-control custom-radio mb-3">
+                              <input name="sex" class="custom-control-input" id="customRadio1" type="radio"
+                                value="male">
+                              <label class="custom-control-label" for="customRadio1">male</label>
                             </div>
                           </div>
-                          
+                          <div class="col-lg-6">
+                            <div class="custom-control custom-radio mb-3">
+                              <input name="sex" class="custom-control-input" id="customRadio2" type="radio"
+                                value="female">
+                              <label class="custom-control-label" for="customRadio2">female</label>
+                            </div>
+                          </div>
                         </div>
-                        <hr class="my-4" />
-                        <!-- Address -->
-                        <h6 class="heading-small text-muted mb-4">Contact information</h6>
-                        <div class="pl-lg-4">
-                          <div class="row">
-                            <div class="col-md-12">
-                              <div class="form-group">
-                                <label class="form-control-label" for="input-address">Address</label>
-                                <input id="input-address" class="form-control form-control-alternative" placeholder="Home Address" type="text" name="address">
-                              </div>
+
+
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <hr class="my-4" />
+                <!-- Address -->
+                <h6 class="heading-small text-muted mb-4">Contact information</h6>
+                <div class="pl-lg-4">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-address">Address</label>
+                        <input id="input-address" class="form-control form-control-alternative"
+                          placeholder="Home Address" type="text" name="address">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-4">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-city">City</label>
+                        <input type="text" id="input-city" class="form-control form-control-alternative"
+                          placeholder="City" name="city">
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-country">State</label>
+                        <input type="text" id="input-country" class="form-control form-control-alternative"
+                          placeholder="State" name="state">
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-country">Postal code</label>
+                        <input type="number" id="input-postal-code" class="form-control form-control-alternative"
+                          placeholder="Postal code" name="pincode">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-3">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-country">Area code</label>
+                        <input type="text" id="input-postal-code" class="form-control form-control-alternative"
+                          placeholder="Area code" name="areacode" value="+91">
+                      </div>
+                    </div>
+                    <div class="col-md-9">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-address">Phone number</label>
+                        <input id="input-address" class="form-control form-control-alternative" placeholder="phoneno"
+                          type="number" name="phoneno">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Profile Information -->
+                <hr class="my-4" />
+                <h6 class="heading-small text-muted mb-4">Profile information (not necessary)</h6>
+                <div class="pl-lg-4">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label class="form-control-label" for="inss">Display Picture</label>
+                        <input id="inss" class="form-control form-control-alternative"
+                          placeholder="Please provide a link" type="text" name="avatar">
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label class="form-control-label" for="inpus">Cover Picture</label>
+                        <input id="inpus" class="form-control form-control-alternative"
+                          placeholder="Please provide a link" type="text" name="cover">
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+                <!-- Educational information -->
+                <hr class="my-4" />
+                <h6 class="heading-small text-muted mb-4">Educational information (Only for Students)</h6>
+                <div class="pl-lg-4">
+                  <div class="row">
+                    <h5 class="form-control-label">Institute / University</h5>
+                    <div class="col-md-12">
+
+                      <div class="form-group">
+                        <div class="row">
+                          <div class="col-lg-6">
+                            <div class="custom-control custom-radio mb-3">
+                              <input name="college" class="custom-control-input" id="college" type="radio"
+                                value="IIEST, Shibpur">
+                              <label class="custom-control-label" for="college">IIEST, Shibpur</label>
                             </div>
                           </div>
-                          <div class="row">
-                            <div class="col-lg-4">
-                              <div class="form-group">
-                                <label class="form-control-label" for="input-city">City</label>
-                                <input type="text" id="input-city" class="form-control form-control-alternative" placeholder="City" name="city">
-                              </div>
-                            </div>
-                            <div class="col-lg-4">
-                              <div class="form-group">
-                                <label class="form-control-label" for="input-country">State</label>
-                                <input type="text" id="input-country" class="form-control form-control-alternative" placeholder="State" name="state">
-                              </div>
-                            </div>
-                            <div class="col-lg-4">
-                              <div class="form-group">
-                                <label class="form-control-label" for="input-country">Postal code</label>
-                                <input type="number" id="input-postal-code" class="form-control form-control-alternative" placeholder="Postal code" name="pincode">
-                              </div>
-                            </div>
-                          </div>
-                          <div class="row">
-                              <div class="col-lg-3">
-                                  <div class="form-group">
-                                    <label class="form-control-label" for="input-country">Area code</label>
-                                    <input type="text" id="input-postal-code" class="form-control form-control-alternative" placeholder="Area code" name="areacode" value="+91">
-                                  </div>
-                              </div>
-                              <div class="col-md-9">
-                                <div class="form-group">
-                                  <label class="form-control-label" for="input-address">Phone number</label>
-                                  <input id="input-address" class="form-control form-control-alternative" placeholder="phoneno" type="number" name="phoneno">
-                                </div>
-                              </div>
-                            </div>
-                        </div>
-                        <!-- Profile Information -->
-                        <hr class="my-4" />
-                        <h6 class="heading-small text-muted mb-4">Profile information (not necessary)</h6>
-                        <div class="pl-lg-4">
-                            <div class="row">
-                              <div class="col-md-12">
-                                <div class="form-group">
-                                  <label class="form-control-label" for="inss">Display Picture</label>
-                                  <input id="inss" class="form-control form-control-alternative" placeholder="Please provide a link" type="text" name="avatar">
-                                </div>
-                              </div>
-                              <div class="col-md-12">
-                                  <div class="form-group">
-                                    <label class="form-control-label" for="inpus">Cover Picture</label>
-                                    <input id="inpus" class="form-control form-control-alternative" placeholder="Please provide a link" type="text" name="cover">
-                                  </div>
-                                </div>
-                            </div>
-                            
-                            
-                          </div>
-                        <!-- Educational information -->
-                        <hr class="my-4" />
-                        <h6 class="heading-small text-muted mb-4">Educational information (Only for Students)</h6>
-                        <div class="pl-lg-4">
-                          <div class="row">
-                              <h5 class="form-control-label">Institute / University</h5>
-                            <div class="col-md-12">
-                                
-                                <div class="form-group">
-                                  <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="custom-control custom-radio mb-3">
-                                            <input name="college" class="custom-control-input" id="college" type="radio" value="IIEST, Shibpur">
-                                            <label class="custom-control-label" for="college">IIEST, Shibpur</label>
-                                          </div>
-                                    </div>
-                                    <!-- <div class="col-lg-6">
+                          <!-- <div class="col-lg-6">
                                         <div class="custom-control custom-radio mb-3">
                                             <input name="sex" class="custom-control-input" id="customRadio2" type="radio" value="female">
                                             <label class="custom-control-label" for="customRadio2">female</label>
                                         </div>
                                     </div> -->
-                                  </div>
-                                    
-                                      
-                                </div>
-                              <!-- <div class="form-group">
+                        </div>
+
+
+                      </div>
+                      <!-- <div class="form-group">
                                 <label class="form-control-label" for="input-address">Institute / University</label>
                                 <input id="input-address" class="form-control form-control-alternative" placeholder="Institute" type="text" value="IIEST, Shibpur" name="college">
                               </div> -->
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-lg-4">
-                              <div class="form-group">
-                                <label class="form-control-label" for="input-city">Semester</label>
-                                <input type="text" id="input-city" class="form-control form-control-alternative" placeholder="eg.1,2" name="semester">
-                              </div>
-                            </div>
-                            <div class="col-lg-8">
-                              <div class="form-group">
-                                <label class="form-control-label" for="input-country">Department</label>
-                                <input type="text" id="input-country" class="form-control form-control-alternative" placeholder="eg. Information Technology" name="department">
-                              </div>
-                            </div>
-                          </div>
-                          <div class="row">
-                              <div class="col-lg-4">
-                                <div class="form-group">
-                                  <label class="form-control-label" for="distance">Distance from College(KMs)</label>
-                                  <input type="number" id="distance" class="form-control form-control-alternative" placeholder="eg.1500" name="distance">
-                                </div>
-                              </div>
-                              <div class="col-lg-8">
-                                <div class="form-group">
-                                  <label class="form-control-label" for="income">Family income(&#x20b9)</label>
-                                  <input type="number" id="income" class="form-control form-control-alternative" placeholder="eg. 250000" name="income">
-                                </div>
-                              </div>
-                            </div>
-                        </div>
-                        <hr class="my-4" />
-                        <!-- Description -->
-                        <!-- <h6 class="heading-small text-muted mb-4">About me</h6>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-4">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-city">Semester</label>
+                        <input type="text" id="input-city" class="form-control form-control-alternative"
+                          placeholder="eg.1,2" name="semester">
+                      </div>
+                    </div>
+                    <div class="col-lg-8">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-country">Department</label>
+                        <input type="text" id="input-country" class="form-control form-control-alternative"
+                          placeholder="eg. Information Technology" name="department">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-4">
+                      <div class="form-group">
+                        <label class="form-control-label" for="distance">Distance from College(KMs)</label>
+                        <input type="number" id="distance" class="form-control form-control-alternative"
+                          placeholder="eg.1500" name="distance">
+                      </div>
+                    </div>
+                    <div class="col-lg-8">
+                      <div class="form-group">
+                        <label class="form-control-label" for="income">Family income(&#x20b9)</label>
+                        <input type="number" id="income" class="form-control form-control-alternative"
+                          placeholder="eg. 250000" name="income">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr class="my-4" />
+                <!-- Description -->
+                <!-- <h6 class="heading-small text-muted mb-4">About me</h6>
                         <div class="pl-lg-4">
                           <div class="form-group">
                             <label>About Me</label>
@@ -345,7 +369,7 @@
                           </div>
                         </div> -->
                 <div class="text-center">
-                    <input class="btn btn-primary mt-4" type="submit" value="Create account">
+                  <input class="btn btn-primary mt-4" type="submit" value="Create account">
                   <!-- <button type="submit" class="btn btn-primary mt-4">Create account</button> -->
                 </div>
               </form>
@@ -365,17 +389,18 @@
   </div>
   <!-- Footer -->
   <footer class="py-5">
-      <div class="container">
-        <div class="row align-items-center justify-content-xl-between">
-          <div class="col-xl-6">
-            <div class="copyright text-center text-xl-left text-muted">
-              © 2018 <a href="https://github.com/negimohit1209/hostelManagementSystem" class="font-weight-bold ml-1" target="_blank">MSN Production</a>
-            </div>
+    <div class="container">
+      <div class="row align-items-center justify-content-xl-between">
+        <div class="col-xl-6">
+          <div class="copyright text-center text-xl-left text-muted">
+            © 2018 <a href="https://github.com/negimohit1209/hostelManagementSystem" class="font-weight-bold ml-1"
+              target="_blank">MSN Production</a>
           </div>
-          
         </div>
+
       </div>
-    </footer>
+    </div>
+  </footer>
   <!-- Argon Scripts -->
   <!-- Core -->
   <script src="/vendor/jquery/dist/jquery.min.js"></script>

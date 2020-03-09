@@ -1,199 +1,201 @@
 <% include ../partials/header%>
-  <%if((currentUser.role === 'student' || currentUser.role === "warden") && !currentUser.hostel.id) {%>
-    <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
-        <div class="container-fluid">
-          <div class="header-body">
-            <!-- Card stats -->
-            <a href="/dashboard/hostels" class="btn btn-outline-success btn-lg">Apply for Hostel</a>
-          </div>
-        </div>
-      </div>
-    <%}else{%>
-      <% if(currentUser.role === 'student' && currentUser.hostel.id){ %>
-        <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
-            <div class="container-fluid">
-              <div class="header-body">
-                <!-- Card stats -->
-                <a href="/dashboard/bill/<%=currentUser._id%>" class="btn btn-outline-success btn-lg">Pay Bills</a>
-              </div>
-            </div>
-          </div>
-      <% }else{ %>
-
-      
-    <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
-      <div class="container-fluid">
-        <div class="header-body">
-          <!-- Card stats -->
-          
-        </div>
-      </div>
+<%if((currentUser.role === 'student' || currentUser.role === "warden") && !currentUser.hostel.id) {%>
+<div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
+  <div class="container-fluid">
+    <div class="header-body">
+      <!-- Card stats -->
+      <a href="/dashboard/hostels" class="btn btn-outline-success btn-lg">Apply for Hostel</a>
     </div>
-    <!-- Page content -->
-    <div class="container-fluid mt--7">
-      
-      <div class="row mt-5">
-        <div class="col-xl-12 mb-5 mb-xl-0">
-          <div class="card shadow">
-            <div class="card-header border-0">
-              <div class="row align-items-center">
-                <div class="col">
-                  <h3 class="mb-0">Students</h3>
-                </div>
-                
-              </div>
+  </div>
+</div>
+<%}else{%>
+<% if(currentUser.role === 'student' && currentUser.hostel.id){ %>
+<div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
+  <div class="container-fluid">
+    <div class="header-body">
+      <!-- Card stats -->
+      <a href="/dashboard/bill/<%=currentUser._id%>" class="btn btn-outline-success btn-lg">Pay Bills</a>
+    </div>
+  </div>
+</div>
+<% }else{ %>
+
+
+<div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
+  <div class="container-fluid">
+    <div class="header-body">
+      <!-- Card stats -->
+
+    </div>
+  </div>
+</div>
+<!-- Page content -->
+<div class="container-fluid mt--7">
+
+  <div class="row mt-5">
+    <div class="col-xl-12 mb-5 mb-xl-0">
+      <div class="card shadow">
+        <div class="card-header border-0">
+          <div class="row align-items-center">
+            <div class="col">
+              <h3 class="mb-0">Students</h3>
             </div>
-            <div class="table-responsive">
-              <!-- Projects table -->
-              <table class="table align-items-center table-flush">
-                <thead class="thead-light">
-                  <tr>
-                    <th scope="col">Student Name</th>
-                    <th scope="col">Hostel Name</th>
-                    <th scope="col">Enrollment</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Gender</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <%users.forEach((user) => { %>
-                    <% if(user.role == "student" && user.hostel.id){ %>
-                      <tr>
-                          <th scope="row">
-                              <div class="media align-items-center">
-                                <a href="#" class="avatar rounded-circle mr-3" data-toggle="tooltip">
-                                    <% if(user.avatar) { %>
-                                      <img alt="Image placeholder" src="<%=user.avatar%>" class="rounded-circle">
-                                  <% }else { %> 
-                                    <img alt="Image placeholder" src="https://dontpakao.files.wordpress.com/2015/06/no-pic-boy.jpg" class="rounded-circle">
-                                  <% } %>
-                                    
-                                  
-                                    
-                                </a>
-                                <div class="media-body">
-                                    <% if(user.firstName && user.lastName) { %>
-                                        <span class="mb-0 text-sm"><%=user.firstName %> <%=user.lastName %></span>
-                                    <% }else { %> 
-                                        <span class="mb-0 text-sm"><%=user.username %></span>
-                                    <% } %>
-                                        
-                                </div>
-                              </div>
-                            </th>
-                          <td>
-                            <%=user.hostel.name%>
-                          </td>
-                          <td>
-                            <%=user.username%>
-                          </td>
-                          <td>
-                            <%=user.email%>
-                          </td>
-                          <td>
-                             <%if(user.sex == "male"){%>
-                            M
-                          <% } else {%>
-                            F
-                            <%}%>
+
+          </div>
+        </div>
+        <div class="table-responsive">
+          <!-- Projects table -->
+          <table class="table align-items-center table-flush">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Student Name</th>
+                <th scope="col">Hostel Name</th>
+                <th scope="col">Enrollment</th>
+                <th scope="col">Email</th>
+                <th scope="col">Gender</th>
+              </tr>
+            </thead>
+            <tbody>
+              <%users.forEach((user) => { %>
+              <% if(user.role == "student" && user.hostel.id){ %>
+              <tr>
+                <th scope="row">
+                  <div class="media align-items-center">
+                    <a href="#" class="avatar rounded-circle mr-3" data-toggle="tooltip">
+                      <% if(user.avatar) { %>
+                      <img alt="Image placeholder" src="<%=user.avatar%>" class="rounded-circle">
+                      <% }else { %>
+                      <img alt="Image placeholder" src="https://dontpakao.files.wordpress.com/2015/06/no-pic-boy.jpg"
+                        class="rounded-circle">
+                      <% } %>
+
+
+
+                    </a>
+                    <div class="media-body">
+                      <% if(user.firstName && user.lastName) { %>
+                      <span class="mb-0 text-sm"><%=user.firstName %> <%=user.lastName %></span>
+                      <% }else { %>
+                      <span class="mb-0 text-sm"><%=user.username %></span>
+                      <% } %>
+
+                    </div>
+                  </div>
+                </th>
+                <td>
+                  <%=user.hostel.name%>
+                </td>
+                <td>
+                  <%=user.username%>
+                </td>
+                <td>
+                  <%=user.email%>
+                </td>
+                <td>
+                  <%if(user.sex == "male"){%>
+                  M
+                  <% } else {%>
+                  F
+                  <%}%>
                           </td>
                          
                         </tr>
                     <% } %>
                   <% })%>
-                  
-                  
-                </tbody>
-              </table>
+
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="row mt-5">
+    <div class="col-xl-12 mb-5 mb-xl-0">
+      <div class="card shadow">
+        <div class="card-header border-0">
+          <div class="row align-items-center">
+            <div class="col">
+              <h3 class="mb-0">Warden</h3>
             </div>
+
           </div>
         </div>
-        
-      </div>
-      <div class="row mt-5">
-          <div class="col-xl-12 mb-5 mb-xl-0">
-            <div class="card shadow">
-              <div class="card-header border-0">
-                <div class="row align-items-center">
-                  <div class="col">
-                    <h3 class="mb-0">Warden</h3>
+        <div class="table-responsive">
+          <!-- Projects table -->
+          <table class="table align-items-center table-flush">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Warden Name</th>
+                <th scope="col">Hostel Name</th>
+                <th scope="col">Employee ID</th>
+                <th scope="col">Email</th>
+                <th scope="col">Gender</th>
+              </tr>
+            </thead>
+            <tbody>
+              <%users.forEach((user) => { %>
+              <% if(user.role == "warden" && user.hostel.id){ %>
+              <tr>
+                <th scope="row">
+                  <div class="media align-items-center">
+                    <a href="#" class="avatar rounded-circle mr-3" data-toggle="tooltip">
+                      <% if(user.avatar) { %>
+                      <img alt="Image placeholder" src="<%=user.avatar%>" class="rounded-circle">
+                      <% }else { %>
+                      <img alt="Image placeholder" src="https://dontpakao.files.wordpress.com/2015/06/no-pic-boy.jpg"
+                        class="rounded-circle">
+                      <% } %>
+
+
+
+                    </a>
+                    <div class="media-body">
+                      <% if(user.firstName && user.lastName) { %>
+                      <span class="mb-0 text-sm"><%=user.firstName %> <%=user.lastName %></span>
+                      <% }else { %>
+                      <span class="mb-0 text-sm"><%=user.username %></span>
+                      <% } %>
+
+                    </div>
                   </div>
-                  
-                </div>
-              </div>
-              <div class="table-responsive">
-                <!-- Projects table -->
-                <table class="table align-items-center table-flush">
-                  <thead class="thead-light">
-                    <tr>
-                      <th scope="col">Warden Name</th>
-                      <th scope="col">Hostel Name</th>
-                      <th scope="col">Employee ID</th>
-                      <th scope="col">Email</th>
-                      <th scope="col">Gender</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <%users.forEach((user) => { %>
-                      <% if(user.role == "warden" && user.hostel.id){ %>
-                        <tr>
-                            <th scope="row">
-                                <div class="media align-items-center">
-                                  <a href="#" class="avatar rounded-circle mr-3" data-toggle="tooltip">
-                                      <% if(user.avatar) { %>
-                                        <img alt="Image placeholder" src="<%=user.avatar%>" class="rounded-circle">
-                                    <% }else { %> 
-                                      <img alt="Image placeholder" src="https://dontpakao.files.wordpress.com/2015/06/no-pic-boy.jpg" class="rounded-circle">
-                                    <% } %>
-                                      
-                                    
-                                      
-                                  </a>
-                                  <div class="media-body">
-                                      <% if(user.firstName && user.lastName) { %>
-                                          <span class="mb-0 text-sm"><%=user.firstName %> <%=user.lastName %></span>
-                                      <% }else { %> 
-                                          <span class="mb-0 text-sm"><%=user.username %></span>
-                                      <% } %>
-                                          
-                                  </div>
-                                </div>
-                              </th>
-                            <td>
-                              <%=user.hostel.name%>
-                            </td>
-                            <td>
-                              <%=user.username%>
-                            </td>
-                            <td>
-                              <%=user.email%>
-                            </td>
-                            <td>
-                               <%if(user.sex == "male"){%>
-                              M
-                            <% } else {%>
-                              F
-                              <%}%>
+                </th>
+                <td>
+                  <%=user.hostel.name%>
+                </td>
+                <td>
+                  <%=user.username%>
+                </td>
+                <td>
+                  <%=user.email%>
+                </td>
+                <td>
+                  <%if(user.sex == "male"){%>
+                  M
+                  <% } else {%>
+                  F
+                  <%}%>
                             </td>
                            
                           </tr>
                       <% } %>
-                    <% })%>
-                    
-                    
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-          
+                  <% })%>
+
+
+            </tbody>
+          </table>
         </div>
-      <!-- Footer -->
-      <% include ../partials/footer%>
+      </div>
     </div>
+
   </div>
-  <%} %>
-  <%}%>
+  <!-- Footer -->
+  <% include ../partials/footer%>
+</div>
+</div>
+<%} %>
+<%}%>
   <!-- Argon Scripts -->
   <!-- Core -->
   <script src="/vendor/jquery/dist/jquery.min.js"></script>
